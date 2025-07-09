@@ -1,0 +1,226 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tools/toolchain_build/riscv/bin/../lib/gcc/riscv64-unknown-elf/12.2.0/libgcc.a
+LOAD /tmp/ccIXCdBk.o
+LOAD /tmp/ccKYpC3T.o
+LOAD /tmp/ccGF2fmT.o
+LOAD /tmp/ccWTS3OF.o
+LOAD /tmp/cc6NdmDW.o
+LOAD /tmp/cc6FUk4M.o
+LOAD /tmp/ccrWEiOQ.o
+LOAD ./output/coremarks/crt.o
+LOAD ./output/coremarks/syscalls.o
+                0x0000000080000000                . = 0x80000000
+
+.text.init      0x0000000080000000       0xfe
+ *(.text.init)
+ .text.init     0x0000000080000000       0xfe ./output/coremarks/crt.o
+                0x0000000080000000                _start
+
+.tohost         0x0000000080001000       0x48
+ *(.tohost)
+ .tohost        0x0000000080001000       0x48 ./output/coremarks/crt.o
+                0x0000000080001000                tohost
+                0x0000000080001040                fromhost
+
+.text           0x0000000080001048     0x683a
+ *(.text)
+ .text          0x0000000080001048      0xade /tmp/ccIXCdBk.o
+                0x0000000080001048                get_seed_32
+                0x000000008000109e                crcu8
+                0x00000000800011c2                crcu16
+                0x0000000080001412                crcu32
+                0x00000000800018cc                crc16
+                0x0000000080001b22                check_data_types
+ .text          0x0000000080001b26        0x0 /tmp/ccKYpC3T.o
+ .text          0x0000000080001b26      0xbb4 /tmp/ccGF2fmT.o
+                0x0000000080001b26                core_bench_state
+                0x000000008000235c                core_init_state
+                0x0000000080002494                core_state_transition
+ .text          0x00000000800026da      0xd3e /tmp/ccWTS3OF.o
+                0x00000000800026da                calc_func
+                0x00000000800027b6                cmp_complex
+                0x0000000080002938                cmp_idx
+                0x000000008000297a                copy_info
+                0x000000008000298c                core_bench_list
+                0x0000000080002f4a                core_list_init
+                0x0000000080003230                core_list_insert_new
+                0x0000000080003282                core_list_remove
+                0x0000000080003298                core_list_undo_remove
+                0x00000000800032a8                core_list_find
+                0x00000000800032e6                core_list_reverse
+                0x00000000800032f8                core_list_mergesort
+ .text          0x0000000080003418       0x42 /tmp/cc6NdmDW.o
+                0x0000000080003418                start_time
+                0x0000000080003422                stop_time
+                0x000000008000342c                get_time
+                0x000000008000343a                time_in_secs
+                0x000000008000344c                portable_init
+                0x0000000080003454                portable_fini
+ .text          0x000000008000345a       0x66 /tmp/cc6FUk4M.o
+                0x000000008000345a                iterate
+ .text          0x00000000800034c0     0x3b40 /tmp/ccrWEiOQ.o
+                0x00000000800034c0                core_bench_matrix
+                0x0000000080004d0e                matrix_test
+                0x0000000080006586                core_init_matrix
+                0x000000008000671e                matrix_sum
+                0x00000000800068f0                matrix_mul_const
+                0x0000000080006a24                matrix_add_const
+                0x0000000080006bc6                matrix_mul_vect
+                0x0000000080006d0c                matrix_mul_matrix
+                0x0000000080006ecc                matrix_mul_matrix_bitextract
+ .text          0x0000000080007000        0x0 ./output/coremarks/crt.o
+ .text          0x0000000080007000      0x882 ./output/coremarks/syscalls.o
+                0x0000000080007000                putchar
+                0x0000000080007024                tohost_exit
+                0x0000000080007036                exit
+                0x0000000080007054                setStats
+                0x000000008000708e                abort
+                0x0000000080007096                printstr
+                0x00000000800070ee                thread_entry
+                0x00000000800070f2                printhex
+                0x0000000080007134                pow_10
+                0x000000008000715a                reverse
+                0x0000000080007188                int_to_string
+                0x0000000080007226                ftoa
+                0x0000000080007640                printf
+                0x0000000080007674                handle_trap
+                0x000000008000768c                _init
+                0x00000000800076d0                sprintf
+                0x0000000080007710                memcpy
+                0x0000000080007750                memset
+                0x00000000800077a4                strlen
+                0x00000000800077be                strnlen
+                0x00000000800077e4                strcmp
+                0x0000000080007802                strcpy
+                0x0000000080007814                atol
+
+.text.startup   0x0000000080007882      0xacc
+ .text.startup  0x0000000080007882      0xab4 /tmp/cc6FUk4M.o
+                0x0000000080007882                main
+ .text.startup  0x0000000080008336       0x18 ./output/coremarks/syscalls.o
+
+.rodata         0x0000000080008350      0x1f0
+ .rodata        0x0000000080008350       0x18 /tmp/ccIXCdBk.o
+ .rodata        0x0000000080008368       0x80 /tmp/ccGF2fmT.o
+ .rodata        0x00000000800083e8      0x158 ./output/coremarks/syscalls.o
+
+.rodata.str1.8  0x0000000080008540      0xc89
+ .rodata.str1.8
+                0x0000000080008540      0xc89 /tmp/ccGF2fmT.o
+                                         0xdd (size before relaxing)
+ .rodata.str1.8
+                0x00000000800091c9      0xb2e /tmp/cc6FUk4M.o
+ .rodata.str1.8
+                0x00000000800091c9       0x79 ./output/coremarks/syscalls.o
+
+.rela.dyn       0x00000000800091d0        0x0
+ .rela.text.init
+                0x00000000800091d0        0x0 /tmp/ccIXCdBk.o
+
+.data           0x00000000800091d0       0x18
+ *(.data)
+ .data          0x00000000800091d0        0x0 /tmp/ccIXCdBk.o
+ .data          0x00000000800091d0        0x0 /tmp/ccKYpC3T.o
+ .data          0x00000000800091d0        0x0 /tmp/ccGF2fmT.o
+ .data          0x00000000800091d0        0x0 /tmp/ccWTS3OF.o
+ .data          0x00000000800091d0        0x0 /tmp/cc6NdmDW.o
+ .data          0x00000000800091d0       0x18 /tmp/cc6FUk4M.o
+                0x00000000800091d0                mem_name
+ .data          0x00000000800091e8        0x0 /tmp/ccrWEiOQ.o
+ .data          0x00000000800091e8        0x0 ./output/coremarks/crt.o
+ .data          0x00000000800091e8        0x0 ./output/coremarks/syscalls.o
+
+.sdata          0x00000000800091e8       0x48
+                0x00000000800099e8                __global_pointer$ = (. + 0x800)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ .srodata.cst8  0x00000000800091e8       0x38 /tmp/cc6NdmDW.o
+                                          0x8 (size before relaxing)
+ .srodata.cst8  0x0000000080009220       0x10 /tmp/cc6FUk4M.o
+ .srodata.cst8  0x0000000080009220       0x10 /tmp/ccrWEiOQ.o
+ .srodata.cst8  0x0000000080009220       0x10 ./output/coremarks/syscalls.o
+ *(.srodata.cst4)
+ .srodata.cst4  0x0000000080009220        0x4 ./output/coremarks/syscalls.o
+ *(.srodata.cst2)
+ *(.srodata*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x0000000080009224        0xc /tmp/cc6NdmDW.o
+                0x0000000080009224                default_num_contexts
+                0x0000000080009228                seed4_volatile
+                0x000000008000922c                seed3_volatile
+
+.sbss           0x0000000080009230       0x1c
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000080009230       0x1c /tmp/cc6NdmDW.o
+                0x0000000080009240                seed5_volatile
+                0x0000000080009244                seed2_volatile
+                0x0000000080009248                seed1_volatile
+ *(.scommon)
+
+.bss            0x0000000080009250       0x20
+ *(.bss)
+ .bss           0x0000000080009250        0x0 /tmp/ccIXCdBk.o
+ .bss           0x0000000080009250        0x0 /tmp/ccKYpC3T.o
+ .bss           0x0000000080009250        0x0 /tmp/ccGF2fmT.o
+ .bss           0x0000000080009250        0x0 /tmp/ccWTS3OF.o
+ .bss           0x0000000080009250        0x0 /tmp/cc6NdmDW.o
+ .bss           0x0000000080009250        0x0 /tmp/cc6FUk4M.o
+ .bss           0x0000000080009250        0x0 /tmp/ccrWEiOQ.o
+ .bss           0x0000000080009250        0x0 ./output/coremarks/crt.o
+ .bss           0x0000000080009250       0x20 ./output/coremarks/syscalls.o
+
+.tdata          0x0000000080009270        0x0
+                0x0000000080009270                _tls_data = .
+ *(.tdata.begin)
+ .tdata.begin   0x0000000080009270        0x0 ./output/coremarks/crt.o
+ *(.tdata)
+ *(.tdata.end)
+ .tdata.end     0x0000000080009270        0x0 ./output/coremarks/crt.o
+
+.tbss           0x0000000080009270        0x0
+ *(.tbss)
+ *(.tbss.end)
+ .tbss.end      0x0000000080009270        0x0 ./output/coremarks/crt.o
+                0x0000000080009270                _end = .
+OUTPUT(output/coremarks/coremarks.riscv elf64-littleriscv)
+
+.comment        0x0000000000000000        0xf
+ .comment       0x0000000000000000        0xf /tmp/ccIXCdBk.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f       0x10 /tmp/ccKYpC3T.o
+ .comment       0x000000000000000f       0x10 /tmp/ccGF2fmT.o
+ .comment       0x000000000000000f       0x10 /tmp/ccWTS3OF.o
+ .comment       0x000000000000000f       0x10 /tmp/cc6NdmDW.o
+ .comment       0x000000000000000f       0x10 /tmp/cc6FUk4M.o
+ .comment       0x000000000000000f       0x10 /tmp/ccrWEiOQ.o
+ .comment       0x000000000000000f       0x10 ./output/coremarks/syscalls.o
+
+.riscv.attributes
+                0x0000000000000000       0x4b
+ .riscv.attributes
+                0x0000000000000000       0x47 /tmp/ccIXCdBk.o
+ .riscv.attributes
+                0x0000000000000047       0x47 /tmp/ccKYpC3T.o
+ .riscv.attributes
+                0x000000000000008e       0x47 /tmp/ccGF2fmT.o
+ .riscv.attributes
+                0x00000000000000d5       0x47 /tmp/ccWTS3OF.o
+ .riscv.attributes
+                0x000000000000011c       0x4b /tmp/cc6NdmDW.o
+ .riscv.attributes
+                0x0000000000000167       0x4b /tmp/cc6FUk4M.o
+ .riscv.attributes
+                0x00000000000001b2       0x47 /tmp/ccrWEiOQ.o
+ .riscv.attributes
+                0x00000000000001f9       0x49 ./output/coremarks/crt.o
+ .riscv.attributes
+                0x0000000000000242       0x4b ./output/coremarks/syscalls.o

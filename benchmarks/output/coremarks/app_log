@@ -1,0 +1,16 @@
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 432275
+Total time (secs): 0.432275
+Iterations/Sec   : 2.313342
+ERROR! Must execute for at least 10 secs for a valid result!
+Iterations       : 1
+Compiler version : riscv64-unknown-elf-12.2.0
+Compiler flags   : -mcmodel=medany -DCUSTOM -DPERFORMANCE_RUN=1 -DMAIN_HAS_NOARGC=1 -DHAS_STDIO -DHAS_PRINTF -DHAS_TIME_H -DUSE_CLOCK -DHAS_FLOAT -DITERATIONS=1 -O2 -fgnu89-inline -nostartfiles -nostdlib -fno-builtin-printf -mabi=lp64d -march=rv64imafdc
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xe714
+Errors detected
